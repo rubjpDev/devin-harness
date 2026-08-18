@@ -1,0 +1,6 @@
+.DS_Store
+progress/.session_start
+progress/.acu_per_hour
+.devin/config.local.json
+AGENTS.local.md
+dist/
