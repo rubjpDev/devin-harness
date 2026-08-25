@@ -1,62 +1,29 @@
-<!-- devin-sdd-harness — port of claude-sdd-harness (origin: inspired by / forked from Bettatech).
-     Adapted by Rubén Juárez Pérez. Ported to Devin CLI. -->
+# <ID> — post-mortem
 
-<!-- Human-facing post-mortem of an incident, written by the validator after the
-     review. Lives at specs/<incident-id>/post-mortem-<incident-id>.md.
-     Style: bro (.devin/skills/bro/SKILL.md) — plain language, real snippets from
-     the diff. Hard cap: ~1-2 screens.
-     NO personal or payment data. Internal ids only. This file is committed. -->
+*Written to be read a year from now, remembering nothing.*
 
-# Post-mortem — <incident-id>
+## What broke
 
-**What broke:** <one line, in the user's terms. What they saw.>
+<One sentence.>
 
-**Why:** <one line. The actual cause, not where the error surfaced.>
+## Why it actually broke
 
-**What stops it now:** <one line. The fix, and the test that keeps it fixed.>
+<The cause, not the symptom. If the answer is "because an exception was thrown",
+that is the symptom — keep going down.>
 
-Verdict: <APPROVED / CHANGES_REQUESTED> · Impact: <who/what was affected, in shapes not names>
+## What fixed it
 
-## Timeline
+<The concrete change. Command, line, value.>
 
-| When | What |
-|---|---|
-| <date / commit / deploy> | <what changed, or `unknown`> |
-| <date> | first report |
-| <date> | fixed |
+## What wasted our time
 
-## The bug
+<The most useful section and the one always skipped. Where we looked first that
+was wrong. The assumption that turned out false. The lead that looked good.>
 
-<Two or three sentences: the mechanism. Why the bad state could exist at all.>
+## If it happens again
 
-```python
-# the code as it was — the actual lines that were wrong
-```
+<Where to start. Ideally the exact command.>
 
-<What was wrong with that. One sentence.>
+## Promoted to docs/
 
-## The fix
-
-```python
-# the actual lines from the diff
-```
-
-<Why this is the cause and not the symptom. One or two sentences.>
-
-## The test that keeps it fixed
-
-```python
-# the regression test
-```
-
-Fails without the fix: <how that was verified.>
-
-## Data already affected
-
-- <rows/records in a bad state, and whether a backfill ran, was deferred, or wasn't
-  needed. `none` if the bug never persisted anything.>
-
-## What would have caught it earlier
-
-- <the missing test, check, constraint, alert or type. One line each. No blame,
-  no "we should be more careful".>
+<Which line, which file. Or "nothing durable", which is also an answer.>
